@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    background: #f4f7f3;
+    font-family: Arial, sans-serif;
+    color: #2a3b2a;
+}
+
+/* Logo */
+.logo {
+    width: 180px;
+    display: block;
+    margin: 20px auto 5px auto;
+}
+
+/* Headline */
+.headline {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #3a5e3a;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Galerie */
+.section-title {
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    padding: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.nav.left {
+    left: 30px;
+}
+
+.nav.right {
+    right: 30px;
+}
