@@ -1,15 +1,15 @@
 :root{
-  --bg-top:#f4f1e8;
-  --bg-bot:#ebe7dc;
-  --text:#233523;
-  --gold:#bfa25a;
+  --bg-top:#f4f1e8;      /* sanftes Creme */
+  --bg-bot:#ebe7dc;      /* etwas dunkler nach unten */
+  --text:#233523;        /* Waldgrün */
+  --gold:#bfa25a;        /* Akzent oben */
 }
 
-*{box-sizing:border-box;}
+*{ box-sizing:border-box; }
 
-html,body{
+html, body{
   margin:0;
-  font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color:var(--text);
   background: linear-gradient(var(--bg-top), var(--bg-bot));
   min-height:100vh;
@@ -17,64 +17,73 @@ html,body{
   overflow-x:hidden;
 }
 
-/* ---------- Gold-Linie oben (dünn) ---------- */
+/* ===== Gold-Linie oben (dünn) ===== */
 body::after{
   content:"";
   position:fixed;
   top:0; left:0; right:0;
-  height:3px;                     /* dünner */
-  background: var(--gold);
+  height:3px;
+  background:var(--gold);
   z-index:10000;
 }
 
-/* ---------- Tannen im Hintergrund (eingebettet & sichtbar) ---------- */
+/* ===== Tannen-Hintergrund (sichtbar, via Datei tannen.svg) =====
+   -> Datei tannen.svg muss im Repo-Root liegen (neben index.html)
+*/
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  /* 8 Tannen als Data-URI, dunkleres Grau-Grün (#333) */
   background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path fill='%23333' d='M24 2l10 12h-6l8 9h-6l8 9h-9v6h-8v-6h-9l8-9h-6l8-9h-6z'/></svg>");
+    url("tannen.svg"),
+    url("tannen.svg"),
+    url("tannen.svg"),
+    url("tannen.svg"),
+    url("tannen.svg"),
+    url("tannen.svg"),
+    url("tannen.svg"),
+    url("tannen.svg");
   background-repeat:no-repeat;
+  /* Positionen wie im Muster – bei Bedarf gern anpassen */
   background-position:
-    12% 14%, 82% 10%, 24% 46%, 62% 34%,
-    14% 86%, 78% 66%, 46% 82%, 90% 56%;
-  background-size: 55px, 50px, 44px, 48px, 42px, 46px, 40px, 34px;
-  opacity:0.22;                 /* sichtbar, aber dezent */
+    12% 14%,
+    82% 10%,
+    24% 46%,
+    62% 34%,
+    14% 86%,
+    78% 66%,
+    46% 82%,
+    90% 56%;
+  background-size:
+    55px, 50px, 44px, 48px, 42px, 46px, 40px, 34px;
+  opacity:0.22;                 /* gut sichtbar, aber dezent */
   pointer-events:none;
   z-index:-1;
 }
 
-/* ---------- Header ---------- */
+/* ===== Header mit großem Logo & Schreibschrift ===== */
 .site-header{
   text-align:center;
   padding:30px 10px 10px;
 }
 
 .logo{
-  width:340px;                  /* doppelt so groß wie vorher */
+  width:340px;                  /* doppelt so groß */
   max-width:80vw;
   height:auto;
   display:block;
-  margin:10px auto 5px;
+  margin:10px auto 6px;
 }
 
-/* Schreibschrift (dünner) */
+/* Schreibschrift für Headline (Allura aus index.html eingebunden) */
 .headline{
   font-family:"Allura", cursive;
-  font-weight:300;
+  font-weight:300;              /* dünner */
   font-size: clamp(2.4rem, 5vw, 4rem);
   margin:6px 0 24px;
 }
 
-/* ---------- Galerie: 3 Spalten, kleinere Kacheln ---------- */
+/* ===== Galerie: 3 Spalten, Kacheln 50% kleiner ===== */
 .gallery{
   width:min(1000px, 94vw);
   margin:20px auto 60px;
@@ -86,36 +95,42 @@ body::before{
 
 .g-img{
   width:100%;
-  height:180px;                 /* 50% kleiner (zuvor ~360px) */
-  object-fit: cover;
-  object-position: center;      /* Thumbnail in der Mitte */
+  height:180px;                 /* ~50% kleiner als 360px */
+  object-fit:cover;
+  object-position:center;
   border-radius:12px;
   cursor:pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,.16);
-  opacity:0; transform: translateY(6px);
-  animation: fade .45s ease forwards;
-  background:#dfe6da;
-}
-@keyframes fade{to{opacity:1; transform:none;}}
+  background:#dfe6da;           /* Platzhalter beim Laden */
+  box-shadow:0 6px 16px rgba(0,0,0,.16);
 
+  opacity:0;
+  transform:translateY(6px);
+  animation:fadeIn .45s ease forwards;
+}
+
+@keyframes fadeIn{
+  to{ opacity:1; transform:none; }
+}
+
+/* Mobil beibehaltende 3er-Spalte (auf Wunsch ändern) */
 @media (max-width:640px){
   .gallery{ gap:8px; }
   .g-img{ height:120px; }
 }
 
-/* ---------- Lightbox (immer mittig) ---------- */
+/* ===== Lightbox: Mitte, Pfeile, Close ===== */
 .lightbox{
   position:fixed;
   inset:0;
-  display:flex;                 /* bleibt Flex, wird via visibility/opacity gesteuert */
+  display:flex;                 /* mit Klassensteuerung sichtbar */
   justify-content:center;
-  align-items:center;           /* vertikal & horizontal zentriert */
-  background: rgba(0,0,0,.88);
+  align-items:center;           /* Bild exakt mittig */
+  padding:16px;
+  background:rgba(0,0,0,.88);
   visibility:hidden;
   opacity:0;
   transition: opacity .18s ease, visibility 0s linear .18s;
   z-index:9999;
-  padding:16px;
 }
 
 .lightbox.open{
@@ -125,36 +140,40 @@ body::before{
 }
 
 #lightbox-img{
-  max-width: 92vw;
-  max-height: 84vh;
+  max-width:92vw;
+  max-height:84vh;
   width:auto; height:auto;
-  display:block;                /* verhindert Baseline-Offset */
+  display:block;
   border-radius:12px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.4);
-  object-fit: contain;          /* NICHT beschneiden, IMMER vollständig */
-  object-position: center;      /* exakt mittig im Overlay */
+  box-shadow:0 10px 40px rgba(0,0,0,.4);
+  object-fit:contain;           /* niemals beschneiden */
+  object-position:center;       /* exakt mittig */
 }
 
 .close{
   position:absolute;
   top:16px; right:20px;
   width:44px; height:44px; border-radius:50%;
-  background: rgba(255,255,255,.12);
+  background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.3);
-  color:#fff; font-size:26px; line-height:42px;
-  text-align:center; cursor:pointer;
+  color:#fff;
+  font-size:26px; line-height:42px;
+  text-align:center;
+  cursor:pointer;
 }
 
 .nav{
   position:absolute;
   top:50%; transform:translateY(-50%);
   width:54px; height:54px; border-radius:50%;
-  background: rgba(255,255,255,.12);
+  background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.35);
-  color:#fff; font-size:28px; line-height:52px;
-  text-align:center; cursor:pointer; user-select:none;
+  color:#fff;
+  font-size:28px; line-height:52px;
+  text-align:center;
+  cursor:pointer; user-select:none;
 }
-.nav.left{ left:18px; }
+.nav.left { left:18px; }
 .nav.right{ right:18px; }
 
 @media (max-width:520px){
