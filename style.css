@@ -106,7 +106,7 @@ body::before{
 .headline{
   font-family:"Allura", cursive;
   font-weight:300;
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   margin:6px 0 24px;
 }
 
