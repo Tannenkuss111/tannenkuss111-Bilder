@@ -6,6 +6,7 @@
   <title>Tannenkuss111 – Galerie</title>
 
   <!-- Schreibschrift -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
@@ -14,35 +15,29 @@
 <body>
 
   <header class="site-header">
-    <img src="tkus111.jpg" class="logo" alt="Tannenkuss111 Logo">
+    <img class="logo" src="tkus111.jpg" alt="Tannenkuss111 Logo">
     <h1 class="headline">Ankommen, wohlfühlen, durchatmen.</h1>
   </header>
 
   <main>
-
     <div class="gallery">
-      <!-- 2 Spalten, große Bilder -->
-      <img src="bilder/bild1.jpg" alt="Bild 1" class="g-img">
-      <img src="bilder/bild2.jpg" alt="Bild 2" class="g-img">
-      <img src="bilder/bild3.jpg" alt="Bild 3" class="g-img">
-      <img src="bilder/bild4.jpg" alt="Bild 4" class="g-img">
-      <img src="bilder/bild5.jpg" alt="Bild 5" class="g-img">
-      <img src="bilder/bild6.jpg" alt="Bild 6" class="g-img">
+      <img class="g-img" src="bilder/bild1.jpg" alt="Ferienwohnung – Bild 1" loading="lazy">
+      <img class="g-img" src="bilder/bild2.jpg" alt="Ferienwohnung – Bild 2" loading="lazy">
+      <img class="g-img" src="bilder/bild3.jpg" alt="Ferienwohnung – Bild 3" loading="lazy">
+      <img class="g-img" src="bilder/bild4.jpg" alt="Ferienwohnung – Bild 4" loading="lazy">
+      <img class="g-img" src="bilder/bild5.jpg" alt="Ferienwohnung – Bild 5" loading="lazy">
+      <img class="g-img" src="bilder/bild6.jpg" alt="Ferienwohnung – Bild 6" loading="lazy">
     </div>
-
   </main>
 
-  <!-- Lightbox -->
+  <!-- Lightbox Overlay -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="close" aria-label="Schließen">✕</button>
-    <div class="lb-inner" role="dialog" aria-modal="true" aria-label="Bildanzeige">
-      <button class="nav left" aria-label="Vorheriges Bild">❮</button>
-      <img id="lightbox-img" alt="Großansicht">
-      <button class="nav right" aria-label="Nächstes Bild">❯</button>
-    </div>
+    <button class="nav left" aria-label="Vorheriges Bild">❮</button>
+    <img id="lightbox-img" alt="Großansicht">
+    <button class="nav right" aria-label="Nächstes Bild">❯</button>
   </div>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
