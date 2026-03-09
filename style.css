@@ -173,18 +173,6 @@ body::before{
   transition: transform .08s ease, background .18s ease, box-shadow .18s ease;
 }
 
-/* Dünne Goldlinie als Akzent im Button */
-.btn-primary::before{
-  content:"";
-  position:absolute;
-  top:0; left:0; right:0;
-  height:3px;
-  border-top-left-radius:12px;
-  border-top-right-radius:12px;
-  background: var(--gold);
-  opacity:.9;
-}
-
 .btn-primary:hover{
   background: var(--green-dark);
   transform: translateY(-1px);
