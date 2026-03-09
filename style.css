@@ -3,9 +3,11 @@
   --bg-bot:#ebe7dc;      /* etwas dunkler nach unten */
   --text:#233523;        /* Waldgrün */
   --gold:#bfa25a;        /* Akzent oben */
+  --green:#3a5e3a;       /* Button-Grün */
+  --green-dark:#2f4c2f;
 }
 
-/* Basis & Hintergrund-Verlauf JETZT auf html (unter den Tannen) */
+/* Basis & Hintergrund-Verlauf auf html (unter den Tannen) */
 *{ box-sizing:border-box; }
 
 html{
@@ -36,14 +38,13 @@ body::after{
 
 /* ===== Tannen-Hintergrund: 16 Stück, sichtbar =====
    - Datei tannen.svg muss im Repo-Root liegen
-   - Verteilung über die Fläche, verschiedene Größen
 */
 body::before{
   content:"";
   position:fixed;
   inset:0;
 
-  /* 16 Hintergründe = 16 Tannen */
+  /* 16 Tannen */
   background-image:
     url("tannen.svg"), url("tannen.svg"), url("tannen.svg"), url("tannen.svg"),
     url("tannen.svg"), url("tannen.svg"), url("tannen.svg"), url("tannen.svg"),
@@ -72,7 +73,7 @@ body::before{
     86% 42%,
     72% 88%;
 
-  /* Größenmix für natürliche Optik (größer/kleiner gemischt) */
+  /* Größenmix */
   background-size:
     55px, 50px, 44px, 48px, 42px, 46px, 40px, 34px,
     36px, 32px, 38px, 30px, 35px, 33px, 37px, 31px;
@@ -102,18 +103,20 @@ body::before{
   margin:10px auto 6px;
 }
 
-/* Schreibschrift (Allura, dünner) */
+/* Headline (Schreibschrift „Allura“) – 3 Zeilen via <br> */
 .headline{
   font-family:"Allura", cursive;
   font-weight:300;
-  font-size: clamp(1.0rem, 2.0vw, 1.6rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.1;
   margin:6px 0 24px;
 }
+.headline br{ display:block; margin-bottom: 6px; }
 
-/* ===== Galerie: 3 Spalten, Kacheln 50% kleiner ===== */
+/* ===== Galerie: 3 Spalten, Kacheln ~50% kleiner ===== */
 .gallery{
   width:min(1000px, 94vw);
-  margin:20px auto 60px;
+  margin:20px auto 22px;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap:14px;
@@ -143,6 +146,55 @@ body::before{
 @media (max-width:640px){
   .gallery{ gap:8px; }
   .g-img{ height:120px; }
+}
+
+/* ===== Button unter der Galerie ===== */
+.cta-wrap{
+  width:min(1000px, 94vw);
+  margin: 10px auto 70px;
+  display:flex;
+  justify-content:center;
+}
+
+.btn-primary{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--green);
+  color:#fff;
+  text-decoration:none;
+  font-weight: 600;
+  letter-spacing: .2px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.22) inset,
+    0 6px 16px rgba(0,0,0,.12);
+  position:relative;
+  transition: transform .08s ease, background .18s ease, box-shadow .18s ease;
+}
+
+/* Dünne Goldlinie als Akzent im Button */
+.btn-primary::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  background: var(--gold);
+  opacity:.9;
+}
+
+.btn-primary:hover{
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.22) inset,
+    0 10px 22px rgba(0,0,0,.16);
+}
+
+.btn-primary:active{
+  transform: translateY(0);
 }
 
 /* ===== Lightbox: Mitte, Pfeile, Close ===== */
@@ -207,58 +259,5 @@ body::before{
   .nav{ width:46px; height:46px; line-height:44px; font-size:24px; }
   .nav.left{ left:10px; }
   .nav.right{ right:10px; }
-}
-
-/* ===== Button unter der Galerie ===== */
-.cta-wrap{
-  width:min(1000px, 94vw);
-  margin: 10px auto 70px;   /* etwas Luft nach unten */
-  display:flex;
-  justify-content:center;
-}
-
-.btn-primary{
-  --green: #3a5e3a;     /* Waldgrün passend zum Layout */
-  --green-dark:#2f4c2f;
-  --gold: var(--gold);
-
-  display:inline-block;
-  padding: 12px 18px;
-  border-radius: 12px;
-  background: var(--green);
-  color:#fff;
-  text-decoration:none;
-  font-weight: 600;
-  letter-spacing: .2px;
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow:
-    0 1px 0 rgba(0,0,0,.22) inset,
-    0 6px 16px rgba(0,0,0,.12);
-  position:relative;
-  transition: transform .08s ease, background .18s ease, box-shadow .18s ease;
-}
-
-/* Dünne Goldlinie als Akzent im Button */
-.btn-primary::before{
-  content:"";
-  position:absolute;
-  top:0; left:0; right:0;
-  height:3px;
-  border-top-left-radius:12px;
-  border-top-right-radius:12px;
-  background: var(--gold);
-  opacity:.9;
-}
-
-.btn-primary:hover{
-  background: var(--green-dark);
-  transform: translateY(-1px);
-  box-shadow:
-    0 1px 0 rgba(0,0,0,.22) inset,
-    0 10px 22px rgba(0,0,0,.16);
-}
-
-.btn-primary:active{
-  transform: translateY(0);
 }
 ``
