@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <g fill="#2f4a2f">
-    <path opacity=".7" d="M24 2l10 12h-6l8 9h-6l8 
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="200" viewBox="0 0 120 200">
+  <g fill="#2f3b2f" opacity="0.22">
+    <path d="M60 0l30 40h-18l24 30h-18l24 30H72v30H48v-30H18l24-30H24l24-30H30z"/>
+  </g>
+</svg>
