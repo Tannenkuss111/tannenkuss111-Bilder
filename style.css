@@ -148,41 +148,41 @@ body::before{
   .g-img{ height:120px; }
 }
 
-/* ===== Button unter der Galerie ===== */
+/* ===== Button unter der Galerie – sehr helles Grün ===== */
 .cta-wrap{
   width:min(1000px, 94vw);
-  margin: 10px auto 70px;
+  margin: 20px auto 70px;
   display:flex;
   justify-content:center;
 }
 
 .btn-primary{
   display:inline-block;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 12px;
-  background: var(--green);
+
+  /* Neues helles Grün */
+  background: #9fbc9f;       /* ← hell, natürlich, freundlich */
   color:#fff;
   text-decoration:none;
-  font-weight: 600;
-  letter-spacing: .2px;
-  border: 1px solid rgba(0,0,0,.08);
+  font-weight:600;
+  letter-spacing:.3px;
+
+  border: 1px solid rgba(0,0,0,.06);
   box-shadow:
-    0 1px 0 rgba(0,0,0,.22) inset,
-    0 6px 16px rgba(0,0,0,.12);
-  position:relative;
-  transition: transform .08s ease, background .18s ease, box-shadow .18s ease;
+    0 1px 0 rgba(0,0,0,.18) inset,
+    0 5px 14px rgba(0,0,0,.10);
+
+  transition: all .18s ease;
 }
 
 .btn-primary:hover{
-  background: var(--green-dark);
+  background:#8ca88c;        /* leicht dunkler */
   transform: translateY(-1px);
-  box-shadow:
-    0 1px 0 rgba(0,0,0,.22) inset,
-    0 10px 22px rgba(0,0,0,.16);
 }
 
 .btn-primary:active{
-  transform: translateY(0);
+  transform:translateY(0);
 }
 
 /* ===== Lightbox: Mitte, Pfeile, Close ===== */
