@@ -223,3 +223,30 @@ body::before{
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.3);
   color:#fff;
+
+/* --- Galerie-Karten-Styling ZURÜCKSETZEN (entfernt weiße Boxen) --- */
+.gallery > * {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;      /* wenn du runde Ecken nur am Bild willst */
+  border: none !important;
+}
+
+/* Thumbnail sauber rendern */
+.g-img{
+  display: block;                   /* entfernt inline-Gap */
+  width: 100%;
+  height: 180px;                    /* deine aktuelle Größe */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;              /* runde Ecken nur am Bild */
+  box-shadow: 0 6px 16px rgba(0,0,0,.16);  /* falls du den weichen Schatten am Bild willst */
+  background: #dfe6da;              /* Platzhalter – kannst du auch entfernen */
+}
+
+/* Optional: Wenn du GAR KEINEN Schatten am Bild willst: */
+/*
+.g-img { box-shadow: none; }
+*/
+``
