@@ -5,42 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tannenkuss111 – Galerie</title>
 
-  <!-- Schreibschrift -->
+  <!-- Google Font: Allura (Schreibschrift) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="site-header">
-    <img class="logo" src="tkus111.jpg" alt="Tannenkuss111 Logo">
-    <h1 class="headline">Ankommen, wohlfühlen, durchatmen.<br>
-      Die Ferienwohung Tannenkuss111 liegt mitten in der Harzer Landschaft, dort wo stille Wälder, klare Luft und sanfte Wege den Alltag vergessen lassen.<br>Die Wohnung selbst ist ein warmer Rückzugsort – ein Platz, an dem man nach einem Tag in der Natur heimkommt und sich sofort geborgen fühlt. </h1>
+    <img src="tkus111.jpg" alt="Tannenkuss111 Logo" class="logo">
+    <h1 class="headline">
+      Ankommen,<br>
+      wohlfühlen,<br>
+      durchatmen.
+    </h1>
   </header>
 
   <main>
+    <!-- Galerie: 3 Spalten -->
     <div class="gallery">
-      <img class="g-img" src="bilder/bild1.jpg" alt="Ferienwohnung – Bild 1" loading="lazy">
-      <img class="g-img" src="bilder/bild2.jpg" alt="Ferienwohnung – Bild 2" loading="lazy">
-      <img class="g-img" src="bilder/bild3.jpg" alt="Ferienwohnung – Bild 3" loading="lazy">
-      <img class="g-img" src="bilder/bild4.jpg" alt="Ferienwohnung – Bild 4" loading="lazy">
-      <img class="g-img" src="bilder/bild5.jpg" alt="Ferienwohnung – Bild 5" loading="lazy">
-      <img class="g-img" src="bilder/bild6.jpg" alt="Ferienwohnung – Bild 6" loading="lazy">
+      <img class="g-img" src="bilder/bild1.jpg" alt="Bild 1 Tannenkuss111">
+      <img class="g-img" src="bilder/bild2.jpg" alt="Bild 2 Tannenkuss111">
+      <img class="g-img" src="bilder/bild3.jpg" alt="Bild 3 Tannenkuss111">
+      <img class="g-img" src="bilder/bild4.jpg" alt="Bild 4 Tannenkuss111">
+      <img class="g-img" src="bilder/bild5.jpg" alt="Bild 5 Tannenkuss111">
+      <img class="g-img" src="bilder/bild6.jpg" alt="Bild 6 Tannenkuss111">
     </div>
-    
-<!-- Call-to-Action: Zur Hauptseite -->
-<div class="cta-wrap">
-  <a class="btn-primary" href="https://tannenkuss111.de">
-    Zur Hauptseite tannenkuss111.de
-  </a>
-</div>
-``
-    
+
+    <!-- Button zur Hauptseite -->
+    <div class="cta-wrap">
+      <a class="btn-primary" href="https://tannenkuss111.de" target="_blank" rel="noopener">
+        Zur Hauptseite &nbsp; tannenkuss111.de
+      </a>
+    </div>
   </main>
 
-  <!-- Lightbox Overlay -->
+  <!-- Lightbox Overlay (Script.js steuert Öffnen/Schließen) -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="close" aria-label="Schließen">✕</button>
     <button class="nav left" aria-label="Vorheriges Bild">❮</button>
@@ -48,6 +50,7 @@
     <button class="nav right" aria-label="Nächstes Bild">❯</button>
   </div>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
