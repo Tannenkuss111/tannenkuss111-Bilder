@@ -264,3 +264,41 @@ body::before{
   .nav.right{ right:10px; }
 }
 ``
+/* ===== Button unter der Galerie – sehr helles, dezentes Grün ===== */
+.cta-wrap{
+  width:min(1000px, 94vw);
+  margin: 20px auto 70px;
+  display:flex;
+  justify-content:center;
+}
+
+.btn-primary{
+  display:inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  /* sehr helles Grün */
+  background: #cfe5cf;           /* HELLER als zuvor */
+  color:#1f2e1f;                  /* dunkles Grün: gute Lesbarkeit */
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.2px;
+
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 5px 14px rgba(0,0,0,.10);
+
+  transition: transform .12s ease, background .18s ease, box-shadow .18s ease;
+}
+.btn-primary:hover{
+  background:#bad8ba;            /* sanfter Hover */
+  transform: translateY(-1px);
+}
+.btn-primary:active{
+  transform: translateY(0);
+}
+
+/* Schutz: Falls irgendwo doch ein leerer oder kaputter Link entstand, blenden wir ihn aus */
+.cta-wrap a:empty { display:none !important; }
+``
