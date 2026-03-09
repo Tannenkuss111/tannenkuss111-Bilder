@@ -208,4 +208,57 @@ body::before{
   .nav.left{ left:10px; }
   .nav.right{ right:10px; }
 }
+
+/* ===== Button unter der Galerie ===== */
+.cta-wrap{
+  width:min(1000px, 94vw);
+  margin: 10px auto 70px;   /* etwas Luft nach unten */
+  display:flex;
+  justify-content:center;
+}
+
+.btn-primary{
+  --green: #3a5e3a;     /* Waldgrün passend zum Layout */
+  --green-dark:#2f4c2f;
+  --gold: var(--gold);
+
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--green);
+  color:#fff;
+  text-decoration:none;
+  font-weight: 600;
+  letter-spacing: .2px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.22) inset,
+    0 6px 16px rgba(0,0,0,.12);
+  position:relative;
+  transition: transform .08s ease, background .18s ease, box-shadow .18s ease;
+}
+
+/* Dünne Goldlinie als Akzent im Button */
+.btn-primary::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  background: var(--gold);
+  opacity:.9;
+}
+
+.btn-primary:hover{
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.22) inset,
+    0 10px 22px rgba(0,0,0,.16);
+}
+
+.btn-primary:active{
+  transform: translateY(0);
+}
 ``
