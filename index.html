@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tannenkuss111 – Galerie</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tannenkuss111 – Galerie</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <img src="tkus111.jpg" class="logo" alt="Tannenkuss111 Logo">
+  <header class="site-header">
+    <img src="tkus111.jpg" alt="Tannenkuss111 Logo" class="logo" />
     <h1 class="headline">Ankommen, wohlfühlen, durchatmen.</h1>
-</header>
 
-<main>
+    <nav class="top-buttons">
+      <a class="btn" href="#start">Startseite</a>
+      <a class="btn" href="#infos">Infos</a>
+      <a class="btn" href="#galerie">Galerie</a>
+    </nav>
+  </header>
 
-    <section class="top-buttons">
-        <a href="#" class="btn">Startseite</a>
-        <a href="#" class="btn">Infos</a>
-        <a href="#galerie" class="btn">Galerie</a>
-    </section>
+  <main>
+    <!-- Dummy-Anker, damit die Buttons funktionieren (Layout bleibt wie bei dir) -->
+    <div id="start"></div>
+    <div id="infos"></div>
 
     <h2 id="galerie" class="section-title">Bildergalerie</h2>
 
     <div class="gallery">
-        <!-- Beispielbilder – kannst du ersetzen -->
-        <img src="bilder/1.jpg" class="g-img" data-index="0">
-        <img src="bilder/2.jpg" class="g-img" data-index="1">
-        <img src="bilder/3.jpg" class="g-img" datascript>
+      <!-- Nutzt deine Dateinamen im Ordner /bilder -->
+      <img src="bilder/bild1.jpg" alt="Bild 1" class="g-img" data-index="0" loading="lazy" />
+      <img src="bilder/bild2.jpg" alt="Bild 2" class="g-img" data-index="1" loading="lazy" />
+      <img src="bilder/bild3.jpg" alt="Bild 3" class="g-img" data-index="2" loading="lazy" />
+      <img src="bilder/bild4.jpg" alt="Bild 4" class="g-img" data-index="3" loading="lazy" />
+      <img src="bilder/bild5.jpg" alt="Bild 5" class="g-img" data-index="4" loading="lazy" />
+      <img src="bilder/bild6.jpg" alt="Bild 6" class="g-img" data-index="5" loading="lazy" />
+    </div>
+  </main>
 
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close" aria-label="Schließen">✕</button>
+    <div class="lb-inner" role="dialog" aria-modal="true" aria-label="Bildanzeige">
+      <button class="nav left" aria-label="Vorheriges Bild">❮</button>
+      <img id="lightbox-img" alt="Großansicht" />
+      <button class="nav right" aria-label="Nächstes Bild">❯</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+``
