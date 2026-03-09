@@ -4,50 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tannenkuss111 – Galerie</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schreibschrift von Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  style.css
 </head>
 <body>
 
-  <header class="site-header">
-    <img src="tkus111.jpg" alt="Tannenkuss111 Logo" class="logo" />
-    <h1 class="headline">Ankommen, wohlfühlen, durchatmen.</h1>
+<header class="site-header">
+  tkus111.jpg
+  <h1 class="headline">Ankommen, wohlfühlen, durchatmen.</h1>
+</header>
 
-    <nav class="top-buttons">
-      <a class="btn" href="#start">Startseite</a>
-      <a class="btn" href="#infos">Infos</a>
-      <a class="btn" href="#galerie">Galerie</a>
-    </nav>
-  </header>
+<main>
 
-  <main>
-    <!-- Dummy-Anker, damit die Buttons funktionieren (Layout bleibt wie bei dir) -->
-    <div id="start"></div>
-    <div id="infos"></div>
+  <h2 class="section-title">Bildergalerie</h2>
 
-    <h2 id="galerie" class="section-title">Bildergalerie</h2>
-
-    <div class="gallery">
-      <!-- Nutzt deine Dateinamen im Ordner /bilder -->
-      <img src="bilder/bild1.jpg" alt="Bild 1" class="g-img" data-index="0" loading="lazy" />
-      <img src="bilder/bild2.jpg" alt="Bild 2" class="g-img" data-index="1" loading="lazy" />
-      <img src="bilder/bild3.jpg" alt="Bild 3" class="g-img" data-index="2" loading="lazy" />
-      <img src="bilder/bild4.jpg" alt="Bild 4" class="g-img" data-index="3" loading="lazy" />
-      <img src="bilder/bild5.jpg" alt="Bild 5" class="g-img" data-index="4" loading="lazy" />
-      <img src="bilder/bild6.jpg" alt="Bild 6" class="g-img" data-index="5" loading="lazy" />
-    </div>
-  </main>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="close" aria-label="Schließen">✕</button>
-    <div class="lb-inner" role="dialog" aria-modal="true" aria-label="Bildanzeige">
-      <button class="nav left" aria-label="Vorheriges Bild">❮</button>
-      <img id="lightbox-img" alt="Großansicht" />
-      <button class="nav right" aria-label="Nächstes Bild">❯</button>
-    </div>
+  <div class="gallery">
+    bilder/bild1.jpg
+    bilder/bild2.jpg
+    bilder/bild3.jpg
+    bilder/bild4.jpg
+    bilder/bild5.jpg
+    bilder/bild6.jpg
   </div>
 
-  <script src="script.js"></script>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <button class="close">✕</button>
+  <button class="nav left">❮</button>
+  <img id="lightbox-img">
+  <button class="nav right">❯</button>
+</div>
+
+script.js
+</script>
+
 </body>
 </html>
-``
