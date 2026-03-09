@@ -1,49 +1,57 @@
+// Elemente
 const thumbs = Array.from(document.querySelectorAll(".g-img"));
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".close");
-const leftBtn = document.querySelector(".nav.left");
+const leftBtn  = document.querySelector(".nav.left");
 const rightBtn = document.querySelector(".nav.right");
-const lbInner = document.querySelector(".lb-inner");
 
 let current = 0;
 let isOpen = false;
 
+// Öffnen
 function openLightbox(index){
   current = index;
   updateImage();
-  lightbox.style.display = "flex";
+  lightbox.classList.add("open");
   lightbox.setAttribute("aria-hidden","false");
   isOpen = true;
 }
+
+// Schließen
 function closeLightbox(){
-  lightbox.style.display = "none";
+  lightbox.classList.remove("open");
   lightbox.setAttribute("aria-hidden","true");
   isOpen = false;
 }
+
+// Bild aktualisieren (immer mittig durch CSS)
 function updateImage(){
   lightboxImg.src = thumbs[current].src;
 }
-function nextImg(){
-  current = (current + 1) % thumbs.length;
-  updateImage();
-}
-function prevImg(){
-  current = (current - 1 + thumbs.length) % thumbs.length;
-  updateImage();
-}
 
-thumbs.forEach((img, idx) => {
-  img.addEventListener("click", () => openLightbox(idx));
+// Navigation
+function nextImg(){ current = (current + 1) % thumbs.length; updateImage(); }
+function prevImg(){ current = (current - 1 + thumbs.length) % thumbs.length; updateImage(); }
+
+// Thumbnails anklickbar
+thumbs.forEach((img, i) => {
+  img.addEventListener("click", () => openLightbox(i));
 });
 
+// Buttons
 closeBtn.addEventListener("click", closeLightbox);
 rightBtn.addEventListener("click", (e)=>{ e.stopPropagation(); nextImg(); });
 leftBtn .addEventListener("click", (e)=>{ e.stopPropagation(); prevImg(); });
 
-// Außenklick schließt — aber Klicks innerhalb der Box nicht
+// Klick außerhalb des Bildes schließt
 lightbox.addEventListener("click", (e) => {
-  if (!lbInner.contains(e.target)) closeLightbox();
+  const clickedInsideImageOrButton =
+    e.target === lightboxImg ||
+    e.target === rightBtn ||
+    e.target === leftBtn ||
+    e.target === closeBtn;
+  if (!clickedInsideImageOrButton) closeLightbox();
 });
 
 // Tastatur
@@ -60,6 +68,7 @@ lightbox.addEventListener("touchstart", (e) => {
   const t = e.touches[0];
   startX = t.clientX; startY = t.clientY;
 }, {passive:true});
+
 lightbox.addEventListener("touchend", (e) => {
   const t = e.changedTouches[0];
   const dx = t.clientX - startX;
@@ -68,4 +77,3 @@ lightbox.addEventListener("touchend", (e) => {
     if (dx < 0) nextImg(); else prevImg();
   }
 });
-``
