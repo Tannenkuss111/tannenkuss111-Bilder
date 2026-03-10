@@ -249,4 +249,71 @@ body::before{
 /*
 .g-img { box-shadow: none; }
 */
-``
+/* ===========================
+   Footer – exakt wie Startseite
+=========================== */
+
+.site-footer {
+  background: #f7efdf;              /* heller Beige-Ton wie Startseite */
+  border-top: 1px solid #e0d6c5;
+  padding: 40px 0 50px;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  text-align: center;
+  color: #4a473f;
+  font-family: system-ui, sans-serif;
+}
+
+.footer-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-address,
+.footer-whatsapp {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #6a665c;
+}
+
+.footer-whatsapp a {
+  color: #2e7d5f;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-whatsapp a:hover {
+  border-bottom-color: #2e7d5f;
+}
+
+.footer-nav {
+  margin: 22px 0 14px;
+  font-size: 0.95rem;
+}
+
+.footer-nav a {
+  color: #a8832f;                    /* goldener Look wie Startseite */
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 2px 4px;
+}
+
+.footer-nav a:hover {
+  border-bottom-color: #a8832f;
+}
+
+.footer-nav .dot {
+  margin: 0 6px;
+  color: #6a665c;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #6a665c;
+  margin-top: 10px;
+}
