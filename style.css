@@ -317,3 +317,25 @@ body::before{
   color: #6a665c;
   margin-top: 10px;
 }
+/* === TANNEN-HINTERGRUND WIEDER AKTIVIEREN === */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 4l15 19h-9l11 13h-9l9 11H15l9-11h-9l11-13h-9L32 4z' fill='%232e7d5f' opacity='0.20'/><rect x='28' y='46' width='8' height='14' rx='1.5' fill='%232e7d5f' opacity='0.20'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 4l15 19h-9l11 13h-9l9 11H15l9-11h-9l11-13h-9L32 4z' fill='%232e7d5f' opacity='0.20'/><rect x='28' y='46' width='8' height='14' rx='1.5' fill='%232e7d5f' opacity='0.20'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 4l15 19h-9l11 13h-9l9 11H15l9-11h-9l11-13h-9L32 4z' fill='%232e7d5f' opacity='0.20'/><rect x='28' y='46' width='8' height='14' rx='1.5' fill='%232e7d5f' opacity='0.20'/></svg>");
+
+  background-repeat: no-repeat;
+  background-position:
+    8% 12%, 40% 20%, 85% 18%;
+
+  background-size:
+    70px, 90px, 110px;
+
+  opacity: 0.18 !important;
+}
