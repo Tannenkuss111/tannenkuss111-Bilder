@@ -107,7 +107,7 @@ body::before{
 .headline{
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight:300;
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
   line-height: 1.1;
   margin:6px 0 24px;
 }
